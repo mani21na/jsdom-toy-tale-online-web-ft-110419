@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   // GET fetch() /////////////////////////////////
   function fetchToys() {
-    return fetch('https:localhost:3000/toys') 
+    return fetch('https:localhost:3000/toys')
       .then(resp => resp.json)
       .then(json => renderToys(json))
   }
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   .then(resp => resp(json))
   .then(newToy => {
     const toyContainer = document.querySelector('#toy-collection')
-    toyContainer.insertAdjacentElement('beforeend', 
+    toyContainer.insertAdjacentElement('beforeend',
     `<div class="card">
     <h2>${newToy.name}</h2>
     <img src=${newToy.image} class="toy-avatar" />
@@ -74,7 +74,7 @@ toyContainer.addEventListener("click", function(e){
 
     document.querySelectorAll("span.counter").forEach(function(span){
       if (span.dataset.id === e.target.dataset.id)
-        targetSpan = span 
+        targetSpan = span
     })
     targetSpan.innerText++
 
